@@ -205,3 +205,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk
+
+#Make sure that all required bits are being included in the build as per https://source.android.com/devices/architecture/vndk/build-system
+BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := true
