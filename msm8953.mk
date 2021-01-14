@@ -250,7 +250,11 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    android.hardware.media.omx@1.0-service \
+    android.hardware.media.omx@1.0-impl \
+    android.hardware.media.omx@1.0 \
+    crash_dump.policy
 
 # Power
 PRODUCT_PACKAGES += \
@@ -374,6 +378,22 @@ PRODUCT_PACKAGES += \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Missing dependencies needed in Halium
+PRODUCT_PACKAGES += \
+    libandroid \
+    libandroid_runtime \
+    libnetutils \
+    libril \
+    libprotobuf-cpp-full \
+    android.hardware.radio.deprecated@1.0-impl \
+    android.hardware.radio.deprecated@1.0-service \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
+    minisfservice \
+    libdrm \
+    libion \
+    vendor.display.config@1.7
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
